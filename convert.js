@@ -32,51 +32,6 @@ function initMap(map) {
 
 }
 
-function isDigit(ch) {
-
-	return ( (ch >= '0' && ch <= '9') || ch === '.');
-
-}
-
-function precedence(op1, op2) {
-
-	if (op1 === '(' || op2 === ')') {
-
-		return false;
-
-	}
-
-	if ( (op1 === '*' || op1 === '/') && (op2 === '+' || op2 === '-') ) {
-        	
-        return false; 
-            
-    } else {
-        	
-        return true; 
-            
-    }
-
-}
-
-
-function applyOperator(op, b, a) {
-
-	switch(op) {
-
-		case '*':
-			return a * parseFloat(b);
-		case '/':
-			if (b == 0)
-				throw ("Cannot divide by zero!");
-			else
-				return a / parseFloat(b);
-
-	}
-
-	return 0;
-
-}
-
 function evalFactor(exp) {
 
 	var split = exp.split(/(?<=[^\d.-])(?=[^\D.-])|(?<=[^\D.-])(?=[^\d.-])/);
