@@ -1,0 +1,11 @@
+{
+  "name": "units",
+  "version": "1.0.0",
+  "description": "Convert imperial units to SI units including a multiplication factor",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "author": "Navneeth Babra",
+  "license": "ISC"
+}
