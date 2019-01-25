@@ -5,23 +5,14 @@ app.get('/', function(req, res){
     res.send('Please use /units/si');
 });
 
-const convert = require('./convert.js');
+const convert = require('./convert.js'); //importing evaluateData function from convert.js
 
-app.get("/units/si", function(req, res) {
+app.get("/units/si", function(req, res) { //get request
 
-    var unit = req.query.units;
-    var resultMap = new Map();
-
-    resultMap = convert.evaluateUnits(unit);
-
-    var JsonData = {};
-
-    JsonData = {
-                "unit_name":resultMap.get('unit_name'), 
-                "multiplication_factor":resultMap.get('multiplication_factor')
-                };
-
-    res.send(JSON.stringify(JsonData, null, 2));
+    var unit = req.query.units; //query parameter
+ 
+    //function call and json formatting with response to client
+    res.send(JSON.stringify( convert.evaluateUnits(unit), null, 2));
 
 });
 

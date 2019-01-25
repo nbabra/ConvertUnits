@@ -107,15 +107,17 @@ module.exports = {
 
 		}
 
-		var f = parseFloat(evalFactor(resMult)); //evaluate arithmetic expression for mult factor
-		f = f.toFixed(14).replace(/\.?0+$/,"").replace(/^[0\.]/, ""); // fix to 14 dec places, remove scientific notation, and remove leading 0 before dec point
+		var factor = parseFloat(evalFactor(resMult)); //evaluate arithmetic expression for mult factor
+		factor = factor.toFixed(14).replace(/\.?0+$/,"").replace(/^[0\.]/, ""); // fix to 14 dec places, remove scientific notation, and remove leading 0 before dec point
 
-		var resMap = new Map();
+		// format return type
+		var JsonData = {
+                "unit_name": resType, 
+                "multiplication_factor": factor
+                };
 
-		resMap.set("unit_name", resType);
-		resMap.set("multiplication_factor", f); 
 
-		return resMap;
+        return JsonData;
 
 	}
 
