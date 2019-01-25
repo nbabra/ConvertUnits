@@ -31,6 +31,19 @@ function initMap(map) {
 	map.set("tonne", "1000 kg");
 	map.set("t", "1000 kg");
 
+	map.set("second", "1 s");
+	map.set("s", "1 s");
+
+	map.set("radian", "1 rad");
+	map.set("rad", "1 rad");
+
+	map.set("m^2", "1 m^2");
+
+	map.set("m^3", "1 m^3");
+
+	map.set("kilogram", "1 kg");
+	map.set("kg", "1 kg");
+
 }
 
 function evalFactor(exp) {
