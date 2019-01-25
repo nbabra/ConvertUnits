@@ -25,7 +25,7 @@ app.get('/units/si', function(req, res) {
 
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = server.listen(process.env.PORT || 3000);
 
 app.listen(PORT, () => console.info(`Running on Port ${PORT}`));
 
