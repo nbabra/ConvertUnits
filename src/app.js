@@ -18,16 +18,15 @@ app.get("/units/si:id", function(req, res) {
 
     JsonData = {
     			"unit_name":resultMap.get('unit_name'), 
-    			"multiplication_factor":resultMap.get('multiplication_factor'
-    		   )};
+    			"multiplication_factor":resultMap.get('multiplication_factor')
+                };
 
     res.send(JSON.stringify(JsonData, null, 2));
 
 });
 
-const PORT = server.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000);
 
-app.listen(PORT, () => console.info(`Running on Port ${PORT}`));
 
 
 
