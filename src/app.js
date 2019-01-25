@@ -7,9 +7,9 @@ app.get('/', function(req, res){
 
 const convert = require('./convert.js');
 
-app.get('/units/si', function(req, res) {
+app.get("/units/si:id", function(req, res) {
 
-	var unit = req.query.units;
+	var unit = request.getParameter("units");
 	var resultMap = new Map();
 
     resultMap = convert.evaluateUnits(unit);
@@ -17,8 +17,8 @@ app.get('/units/si', function(req, res) {
     var JsonData = {};
 
     JsonData = {
-    			'unit_name':resultMap.get('unit_name'), 
-    			'multiplication_factor':resultMap.get('multiplication_factor'
+    			"unit_name":resultMap.get('unit_name'), 
+    			"multiplication_factor":resultMap.get('multiplication_factor'
     		   )};
 
     res.send(JSON.stringify(JsonData, null, 2));
