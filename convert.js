@@ -1,5 +1,6 @@
 var map = new Map();
 
+//Initialize map with the conversion rate and the updated units as the value
 function initMap(map) {
 
 	map.set("minute", "60 s");
@@ -14,15 +15,15 @@ function initMap(map) {
 	map.set("hectare", "10000 m^2");
 	map.set("ha", "10000 m^2");
 		
-	map.set("degree", "π/180 rad");
-	map.set("°", "π/180 rad");
+	map.set("degree", "314/180 rad");
+	map.set("°", "314/180 rad");
 		
-	map.set("arcminute", "π/10800 rad");
-	map.set("'", "π/10800 rad");
+	map.set("arcminute", "314/10800 rad");
+	map.set("'", "314/10800 rad");
 		
-	map.set("arcsecond", "π/648000 rad");
+	map.set("arcsecond", "314/648000 rad");
 	var unit = '"' + "";
-	map.set(unit, "π/648000 rad");
+	map.set(unit, "314/648000 rad");
 		
 	map.set("litre", "0.001 m^3");
 	map.set("L", "0.001 m^3");
@@ -34,7 +35,7 @@ function initMap(map) {
 
 function evalFactor(exp) {
 
-	var split = exp.split(/(?<=[^\d.-])(?=[^\D.-])|(?<=[^\D.-])(?=[^\d.-])/);
+	var split = exp.split(/(?<=[^\d.-])(?=[^\D.-])|(?<=[^\D.-])(?=[^\d.-])/); //split string on every non number, preserving delimiters
 
 	var res = "";
 
@@ -60,7 +61,7 @@ module.exports = {
 
 		var myRegExp = new RegExp(/(?<=[^a-z])(?=[^A-Z])|(?<=[^A-Z])(?=[^a-z])/)
 
-		var strArr = str.split(myRegExp);
+		var strArr = str.split(myRegExp); //split string on every non letter, preserving delimiters
 		var multArr = strArr.slice(0);
 
 		initMap(map);
@@ -79,7 +80,7 @@ module.exports = {
 
 		var resType = "";
 
-		for (var i = 0; i < strArr.length; i++) {
+		for (var i = 0; i < strArr.length; i++) { //concatenate unit string
 
 			resType += strArr[i];
 
@@ -87,24 +88,18 @@ module.exports = {
 
 		var resMult = "";
 
-		for (var i = 0; i < multArr.length; i++) {
-
-			if (multArr[i].includes("π") ) {
-
-				multArr[i] = multArr[i].replace("π", "314");
-
-			}
+		for (var i = 0; i < multArr.length; i++) { //concatenate multiplication string
 
 			resMult += multArr[i];
 
 		}
 
-		var f = evalFactor(resMult);
+		var f = evalFactor(resMult); //evaluate arithmetic expression for mult factor
 
 		var resMap = new Map();
 
 		resMap.set("unit_name", resType);
-		resMap.set("multiplication_factor", parseFloat(f.toFixed(14)));
+		resMap.set("multiplication_factor", parseFloat(f.toFixed(14))); //fix decimals to 14 places
 
 		return resMap;
 
