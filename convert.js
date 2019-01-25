@@ -95,11 +95,12 @@ module.exports = {
 		}
 
 		var f = parseFloat(evalFactor(resMult)); //evaluate arithmetic expression for mult factor
+		f = f.toFixed(14).replace(/\.?0+$/,"").replace(/^[0\.]/, ""); // fix to 14 dec places, remove scientific notation, and remove leading 0 before dec point
 
 		var resMap = new Map();
 
 		resMap.set("unit_name", resType);
-		resMap.set("multiplication_factor", f.toFixed(14).replace(/\.?0+$/,"")); //fix decimals to 14 places and prevents scientific notation
+		resMap.set("multiplication_factor", f); 
 
 		return resMap;
 
