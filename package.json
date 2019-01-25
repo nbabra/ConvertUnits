@@ -7,5 +7,6 @@
     "express": "^4.16.4"
   },
   "author": "Navneeth Babra",
-  "license": "ISC"
+  "license": "ISC",
+  "start": "node app.js"
 }
