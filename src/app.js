@@ -23,8 +23,6 @@ app.get('/units/si', function(req, res) {
 
     res.send(JSON.stringify(JsonData, null, 2));
 
-    return JSON.stringify(JsonData, null, 2)
-
 });
 
 const PORT = process.env.PORT || 3000;
