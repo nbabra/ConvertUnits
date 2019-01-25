@@ -18,7 +18,7 @@ For example: https://convert-units.herokuapp.com/units/si?units=(degree/minute)
 --
 
 ## Supported Units
-![Units](https://raw.githubusercontent.com/nbabra/ConvertUnits/master/img/Units.png)
+![Units](./img/Units.png)
 
 --
 
