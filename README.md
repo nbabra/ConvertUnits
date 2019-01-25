@@ -4,23 +4,23 @@ https://convert-units.herokuapp.com/units/si
 
 Get API to convert widely used units to SI units with a multiplication factor for conversion
 
---
+---
 
 ## Dependencies
 Node.js and Express
 
---
+---
 
 ## How to Use
 Add query parameter to url after si, as ?units=______
 For example: https://convert-units.herokuapp.com/units/si?units=(degree/minute)
 
---
+---
 
 ## Supported Units
 ![Units](./img/Units.png)
 
---
+---
 
 ## Authors
 Navneeth Babra
