@@ -12,7 +12,7 @@ Node.js and Express
 ---
 
 ## How to Use
-Add query parameter to url after si, as ?units=______
+Add query parameter to url after si, as ?units=______ \n
 For example: https://convert-units.herokuapp.com/units/si?units=(degree/minute)
 
 ---
