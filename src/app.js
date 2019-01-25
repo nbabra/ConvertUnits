@@ -25,7 +25,11 @@ app.get("/units/si:id", function(req, res) {
 
 });
 
-app.listen(process.env.PORT || 3000);
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => {
+    ('Listening on port %d', PORT);
+});
 
 
 
