@@ -1,6 +1,6 @@
 var map = new Map();
 
-//Initialize map with the conversion rate and the updated units as the value
+//Initialize map with the input unit as the key and the conversion rate/updated units as the value
 function initMap(map) {
 
 	map.set("minute", "60 s");
