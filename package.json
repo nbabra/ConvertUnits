@@ -6,7 +6,9 @@
   "dependencies": {
     "express": "^4.16.4"
   },
+  "scripts": {
+  	"start": "node index.js"
+  },
   "author": "Navneeth Babra",
-  "license": "ISC",
-  "start": "node app.js"
+  "license": "ISC"
 }
