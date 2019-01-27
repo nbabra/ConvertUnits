@@ -111,7 +111,10 @@ module.exports = {
 		factor = factor.toFixed(14).replace(/\.?0+$/,"").replace(/^[0\.]/, ""); // fix to 14 dec places, remove scientific notation, and remove leading 0 before dec point
 
 		// format return type
-		var JsonData = {"unit_name": resType, "multiplication_factor": factor};
+		var JsonData = {
+                		 "unit_name": resType, 
+               			 "multiplication_factor": factor
+                	   };
 
 
         return JsonData;
