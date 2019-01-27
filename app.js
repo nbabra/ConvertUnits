@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var http = require("http");
 
 app.get('/', function(req, res){
     res.send('Please use /units/si');
@@ -12,6 +13,7 @@ app.get("/units/si", function(req, res) { //get request
     var unit = req.query.units; //query parameter
  
     //function call and json formatting with response to client
+    res.header("Content-Type",'application/json');
     res.send(JSON.stringify( convert.evaluateUnits(unit), null, 2));
 
 });
