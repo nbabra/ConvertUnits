@@ -1,7 +1,5 @@
 # Convert-Units ![License](https://img.shields.io/apm/l/vim-mode.svg?colorB=orange&style=plastic) ![Language](https://img.shields.io/badge/language-Javascript-<Blue>.svg) 
 
-https://convert-units.herokuapp.com/units/si
-
 <a href="https://convert-units.herokuapp.com/units/si" target="_blank">https://convert-units.herokuapp.com/units/si</a>
 
 Get API to convert widely used units to SI units with a multiplication factor for conversion
